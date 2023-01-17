@@ -7,6 +7,10 @@ const fetchOrders = async (props) => {
   const res = await fetch(
     `https://apiep-production.up.railway.app/api/orders?page=${page}&canal=${canal}`,
     {
+      headers: {
+        Authorization: process.env.AUTH_TOKEN,
+      },
+
       cache: 'no-store',
     }
   )

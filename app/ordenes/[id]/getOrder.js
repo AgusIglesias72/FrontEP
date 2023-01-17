@@ -1,6 +1,11 @@
 const fetchOrder = async (id) => {
   const res = await fetch(
-    `https://apiep-production.up.railway.app/api/orders/${id}`
+    `https://apiep-production.up.railway.app/api/orders/${id}`,
+    {
+      headers: {
+        Authorization: process.env.AUTH_TOKEN,
+      },
+    }
   )
   return await res.json()
 }
