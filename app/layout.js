@@ -1,3 +1,6 @@
+import TopbarContainer from '../Components/TopContainer.js'
+import './globals.css'
+
 export default function RootLayout({ children }) {
   return (
     <html>
@@ -6,10 +9,8 @@ export default function RootLayout({ children }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-
       <body>
-        <h1>Next.js</h1>
-        {children}
+        <TopbarContainer>{children}</TopbarContainer>
       </body>
     </html>
   )
