@@ -1,3 +1,5 @@
+import Header from '../../../Components/Header'
+
 const fetchOrder = async (id) => {
   const res = await fetch(
     `https://apiep-production.up.railway.app/api/orders/${id}`,
@@ -18,6 +20,7 @@ export async function Order({ id }) {
 
   return (
     <>
+      <Header title={orderData.IdPedido} subtitle="Información de Órdenes" />
       <h1>{orderData.IdPedido}</h1>
       <p>{orderData.CanalVenta}</p>
     </>

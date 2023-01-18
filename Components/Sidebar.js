@@ -153,19 +153,19 @@ const MySidebar = () => {
                 color={colors.grey[300]}
                 sx={{ m: '15px 0 5px 20px' }}
               >
-                Data
+                Datos
               </Typography>
               <Item
-                title="Ventas"
-                to="/ventas"
+                title="Ordenes"
+                to="/ordenes"
                 icon={<BarChartOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
 
               <Item
-                title="Contacts Information"
-                to="/contacts"
+                title="Revendedores"
+                to="/revendedores"
                 icon={<ContactsOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}

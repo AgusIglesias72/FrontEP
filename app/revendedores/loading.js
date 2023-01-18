@@ -1,14 +1,15 @@
 import Header from '../../Components/Header'
 
-export default function () {
+export default function Home() {
   return (
     <div
       style={{
         margin: '20px',
       }}
     >
-      <Header title="Mayoristas" subtitle="Agregar una nueva venta mayorista" />
-      <h1>Cargando...</h1>
+      <Header title="Cargando..." subtitle="Información de Órdenes" />
+
+      <h1>Cargando</h1>
     </div>
   )
 }

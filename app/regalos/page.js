@@ -1,7 +1,14 @@
-export default function Home() {
+import Header from '../../Components/Header'
+
+export default function () {
   return (
-    <div>
-      <h1>He</h1>
+    <div
+      style={{
+        margin: '20px',
+      }}
+    >
+      <Header title="Regalos" subtitle="Agregar un nuevo regalo" />
+      <h1>Cargando...</h1>
     </div>
   )
 }
