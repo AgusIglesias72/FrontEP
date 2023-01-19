@@ -6,8 +6,10 @@ import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
+import LogoutIcon from '@mui/icons-material/Logout'
 import SearchIcon from '@mui/icons-material/Search'
+import Tooltip from '@mui/material/Tooltip'
+import { signOut } from 'next-auth/react'
 
 export const modes = (mode) => ({
   ...(mode === 'dark'
@@ -260,22 +262,29 @@ export const Topbar = () => {
       </Box>
 
       <Box display="flex">
-        <IconButton onClick={colorMode.toggleColorMode}>
-          {theme.palette.mode === 'dark' ? (
-            <LightModeOutlinedIcon />
-          ) : (
-            <DarkModeOutlinedIcon />
-          )}
-        </IconButton>
+        <Tooltip
+          title={theme.palette.mode === 'dark' ? 'Modo claro' : 'Modo oscuro'}
+        >
+          <IconButton onClick={colorMode.toggleColorMode}>
+            {theme.palette.mode === 'dark' ? (
+              <LightModeOutlinedIcon />
+            ) : (
+              <DarkModeOutlinedIcon />
+            )}
+          </IconButton>
+        </Tooltip>
+
         <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>
         <IconButton>
           <SettingsOutlinedIcon />
         </IconButton>
-        <IconButton>
-          <PersonOutlinedIcon />
-        </IconButton>
+        <Tooltip title="Cerrar sesión">
+          <IconButton onClick={() => signOut()}>
+            <LogoutIcon />
+          </IconButton>
+        </Tooltip>
       </Box>
     </Box>
   )

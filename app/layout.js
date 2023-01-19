@@ -1,7 +1,9 @@
+'use client'
 import TopbarContainer from '../Components/TopContainer.js'
 import './globals.css'
+import { SessionProvider } from 'next-auth/react'
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, session }) {
   return (
     <html>
       <head>
@@ -10,7 +12,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <TopbarContainer>{children}</TopbarContainer>
+        <SessionProvider session={session}>
+          <TopbarContainer>{children}</TopbarContainer>
+        </SessionProvider>
       </body>
     </html>
   )

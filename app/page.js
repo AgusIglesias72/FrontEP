@@ -1,7 +1,9 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
-    <div>
-      <h1>He</h1>
-    </div>
+    <Link href="/mayoristas" as="/mayoristas">
+      Mayoristas
+    </Link>
   )
 }
