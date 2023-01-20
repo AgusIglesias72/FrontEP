@@ -180,6 +180,7 @@ export default function Mayoristas() {
       return
     }
     addMayorista(body).then((res) => {
+      setSnackbar(true)
       if (res.message === 'Ok') {
         setSnackbarMessage({
           state: 'success',
