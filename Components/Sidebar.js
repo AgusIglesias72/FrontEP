@@ -53,7 +53,7 @@ const MySidebar = ({ imageUrl, userName }) => {
   )
 
   return (
-    <ProSidebarProvider>
+    <ProSidebarProvider id="sidebar">
       <Box
         sx={{
           '& .pro-icon-wrapper': {
@@ -67,6 +67,7 @@ const MySidebar = ({ imageUrl, userName }) => {
         <Sidebar
           defaultCollapsed={isCollapsed}
           backgroundColor={colors.primary[400]}
+          sx={{}}
         >
           <Menu
             iconShape="square"
@@ -204,42 +205,6 @@ const MySidebar = ({ imageUrl, userName }) => {
                 title="Personales"
                 to="/personales"
                 icon={<AccountBoxIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-
-              <Typography
-                variant="h6"
-                color={colors.grey[300]}
-                sx={{ m: '15px 0 5px 20px' }}
-              >
-                Charts
-              </Typography>
-              <Item
-                title="Bar Chart"
-                to="/bar"
-                icon={<BarChartOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-              <Item
-                title="Pie Chart"
-                to="/pie"
-                icon={<PieChartOutlineOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-              <Item
-                title="Line Chart"
-                to="/line"
-                icon={<TimelineOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-              <Item
-                title="Geography Chart"
-                to="/geography"
-                icon={<MapOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />

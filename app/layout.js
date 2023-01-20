@@ -11,9 +11,15 @@ export default function RootLayout({ children, session }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>
+      <body
+        sx={{
+          height: '100%',
+        }}
+      >
         <SessionProvider session={session}>
-          <TopbarContainer>{children}</TopbarContainer>
+          <TopbarContainer>
+            <div>{children}</div>
+          </TopbarContainer>
         </SessionProvider>
       </body>
     </html>
