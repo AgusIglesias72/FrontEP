@@ -105,8 +105,6 @@ export default function Mayoristas() {
     },
   ])
 
-  // const revendedores = await getData()
-
   const handleChange = (e) => {
     setData({
       ...data,
@@ -159,20 +157,19 @@ export default function Mayoristas() {
     }
 
     console.log('body', body)
-    console.log('data', data)
 
     if (
-      data.fecha_compra === '' ||
-      data.nombre === '' ||
-      data.provincia === '' ||
-      data.pais === '' ||
-      data.tipo_envio === '' ||
-      data.stock === '' ||
-      data.fecha_envio === '' ||
-      data.metodo_pago === '' ||
-      data.moneda === '' ||
-      data.fecha_pago === '' ||
-      data.productos.length === 0
+      body.fecha_compra === '' ||
+      body.nombre === '' ||
+      body.provincia === '' ||
+      body.pais === '' ||
+      body.tipo_envio === '' ||
+      body.stock === '' ||
+      body.fecha_envio === '' ||
+      body.metodo_pago === '' ||
+      body.moneda === '' ||
+      body.fecha_pago === '' ||
+      body.productos.length === 0
     ) {
       setSnackbarMessage({
         state: 'error',
