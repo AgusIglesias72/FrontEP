@@ -158,6 +158,9 @@ export default function Mayoristas() {
       ),
     }
 
+    console.log('body', body)
+    console.log('data', data)
+
     if (
       data.fecha_compra === '' ||
       data.nombre === '' ||
