@@ -46,6 +46,7 @@ const addPersonal = async (data) => {
     )
     return postData
   } catch (error) {
+    console.log(error)
     return {
       error: error,
       message: 'Error',
