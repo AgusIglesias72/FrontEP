@@ -36,7 +36,7 @@ const addPersonal = async (data) => {
 
   try {
     const postData = await axios.post(
-      'https://apiep-production.up.railway.app/api/orders/personales',
+      'https://apiep-production.up.railway.app/api/orders/personal',
       {
         data,
         headers: {
