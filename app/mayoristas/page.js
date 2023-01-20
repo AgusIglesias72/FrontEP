@@ -35,21 +35,19 @@ const getRevendedores = async () => {
   return await Revendedores()
 }
 
-const addMayorista = async (data) => {
-  console.log(data)
-
+const addMayorista = async (body) => {
+  const url = 'https://apiep-production.up.railway.app/api/orders/mayorista'
   try {
-    const postData = await axios.post(
-      'https://apiep-production.up.railway.app/api/orders/mayorista',
-      {
-        data,
-        headers: {
-          Authorization: process.env.AUTH_TOKEN,
-        },
-      }
-    )
+    const postData = await axios.post(url, body, {
+      headers: {
+        Authorization: process.env.AUTH_TOKEN,
+      },
+    })
+
     return postData
   } catch (error) {
+    console.log(error)
+
     return {
       error: error,
       message: 'Error',
@@ -144,7 +142,6 @@ export default function Mayoristas() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setBackdrop(true)
     const body = {
       ...data,
       fecha_compra: data.fecha_compra.split('-').reverse().join('/'),
@@ -181,7 +178,7 @@ export default function Mayoristas() {
     }
     addMayorista(body).then((res) => {
       setSnackbar(true)
-      if (res.message === 'Ok') {
+      if (res.data.message === 'Ok') {
         setSnackbarMessage({
           state: 'success',
           message: 'Ingresado correctamente',
@@ -195,6 +192,7 @@ export default function Mayoristas() {
     })
     setTimeout(() => {
       setBackdrop(false)
+      setSnackbar(true)
     }, 1000)
   }
 

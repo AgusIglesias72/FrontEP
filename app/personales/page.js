@@ -31,19 +31,15 @@ import {
   canalVentaPersonal,
 } from '../../Data/data.js'
 
-const addPersonal = async (data) => {
-  console.log(data)
-
+const addPersonal = async (body) => {
+  const url = 'https://apiep-production.up.railway.app/api/orders/personal'
   try {
-    const postData = await axios.post(
-      'https://apiep-production.up.railway.app/api/orders/personal',
-      {
-        data,
-        headers: {
-          Authorization: process.env.AUTH_TOKEN,
-        },
-      }
-    )
+    const postData = await axios.post(url, body, {
+      headers: {
+        Authorization: process.env.AUTH_TOKEN,
+      },
+    })
+
     return postData
   } catch (error) {
     console.log(error)
@@ -161,7 +157,8 @@ const Personales = () => {
       return
     }
     addPersonal(body).then((res) => {
-      if (res.message === 'Ok') {
+      console.log(res)
+      if (res.data.message === 'Ok') {
         setSnackbarMessage({
           state: 'success',
           message: 'Ingresado correctamente',
@@ -175,6 +172,7 @@ const Personales = () => {
     })
     setTimeout(() => {
       setBackdrop(false)
+      setSnackbar(true)
     }, 1000)
   }
 
