@@ -142,6 +142,7 @@ export default function Mayoristas() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setBackdrop(true)
     const body = {
       ...data,
       fecha_compra: data.fecha_compra.split('-').reverse().join('/'),
@@ -152,8 +153,6 @@ export default function Mayoristas() {
         (item) => item.nombre !== '' && item.cantidad > 0
       ),
     }
-
-    console.log('body', body)
 
     if (
       body.fecha_compra === '' ||
@@ -177,7 +176,8 @@ export default function Mayoristas() {
       return
     }
     addMayorista(body).then((res) => {
-      setSnackbar(true)
+      // setBackdrop(true)
+
       if (res.data.message === 'Ok') {
         setSnackbarMessage({
           state: 'success',
@@ -190,6 +190,8 @@ export default function Mayoristas() {
         })
       }
     })
+    setSnackbar(true)
+
     setTimeout(() => {
       setBackdrop(false)
       setSnackbar(true)

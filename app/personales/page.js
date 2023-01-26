@@ -133,10 +133,9 @@ const Personales = () => {
       ),
     }
 
-    console.log(body)
-
     if (
       body.fecha_compra === '' ||
+      body.canal_venta === '' ||
       body.nombre === '' ||
       body.provincia === '' ||
       body.pais === '' ||
