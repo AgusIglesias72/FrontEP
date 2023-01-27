@@ -168,11 +168,11 @@ const Personales = () => {
           message: 'Error al ingresar',
         })
       }
+      setTimeout(() => {
+        setBackdrop(false)
+        setSnackbar(true)
+      }, 1000)
     })
-    setTimeout(() => {
-      setBackdrop(false)
-      setSnackbar(true)
-    }, 1000)
   }
 
   const SnackMessage = () => {

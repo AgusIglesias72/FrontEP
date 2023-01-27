@@ -176,8 +176,7 @@ export default function Mayoristas() {
       return
     }
     addMayorista(body).then((res) => {
-      // setBackdrop(true)
-
+      console.log(res)
       if (res.data.message === 'Ok') {
         setSnackbarMessage({
           state: 'success',
@@ -189,13 +188,11 @@ export default function Mayoristas() {
           message: 'Error al ingresar',
         })
       }
+      setTimeout(() => {
+        setBackdrop(false)
+        setSnackbar(true)
+      }, 1000)
     })
-    setSnackbar(true)
-
-    setTimeout(() => {
-      setBackdrop(false)
-      setSnackbar(true)
-    }, 1000)
   }
 
   const SnackMessage = () => {
