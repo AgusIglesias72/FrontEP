@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 const fetchOrders = async (props) => {
-  console.log(process.env.AUTH_TOKEN)
   const page = props.page || 1
   const canal = props.canal || 'all'
 

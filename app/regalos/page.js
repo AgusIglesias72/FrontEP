@@ -147,10 +147,10 @@ const Regalo = () => {
           message: 'Error al ingresar',
         })
       }
-      setTimeout(() => {
-        setBackdrop(false)
-        setSnackbar(true)
-      }, 1000)
+      // setTimeout(() => {
+      setBackdrop(false)
+      setSnackbar(true)
+      // }, 1000)
     })
   }
 

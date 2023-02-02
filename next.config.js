@@ -10,6 +10,7 @@ const nextConfig = {
         hostname: 'lh3.googleusercontent.com',
       },
     ],
+    domains: ['d3ugyf2ht6aenh.cloudfront.net'],
   },
   reactStrictMode: true,
   env: {
