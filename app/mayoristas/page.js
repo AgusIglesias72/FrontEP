@@ -678,7 +678,9 @@ export default function Mayoristas() {
           variant="contained"
           onClick={handleSubmit}
           sx={{
-            width: '60%',
+            width: '100%',
+            backgroundColor: '#3f51b5 !important',
+            color: '#fff !important',
           }}
         >
           <Typography variant="h5">Cargar Venta</Typography>
